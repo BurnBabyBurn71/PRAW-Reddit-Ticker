@@ -1,0 +1,54 @@
+.titlebox h4:nth-of-type(1) {
+    display: block;
+    position: absolute;
+    top: 192px;
+    right: 324px;
+    left: 9px;
+    padding: 4px 0 4px 10px;
+    min-width: 590px;
+    background-color: #f5f5f5;
+    border: 1px solid #dcdcdc;
+    border-radius: 2px;
+    color: #666;
+    font-weight: 400;
+    font-size: 14px
+}
+
+.titlebox h4:nth-of-type(1) a {
+    color: #2ecc71;
+    font-weight: 700
+}
+
+.titlebox h4:nth-of-type(1) a:hover {
+    border: 0;
+    text-decoration: underline
+}
+
+.titlebox h4:nth-of-type(2) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 97;
+    height: 15px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 2px 4px 0 #c8c8c8;
+    box-shadow: 0 2px 4px 0 #c8c8c8;
+    color: #737373;
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 29px
+}
+
+.titlebox h4:nth-of-type(2) a {
+    margin: 0 30px;
+    padding-bottom: 4px;
+    color: #737373
+}
+
+.titlebox h4:nth-of-type(2) a:hover {
+    border-bottom: 2px solid #2ecc71;
+    color: #262626;
+    text-decoration: none
+}
