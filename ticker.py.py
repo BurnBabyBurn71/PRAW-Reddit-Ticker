@@ -1,6 +1,6 @@
 import praw, time, html.parser, requests
 
-#this is designed for python 3.3
+#this is designed for python 3.3 and for the /r/BytecoinBCN subreddit, to use, change as needed
 #for python 2.x you will have to change 'import html.parser' to 'import HTMLParser'.
 #You will also have to change 'html.parser.HTMLParser()' to HTMLParser.HTMLParser()'
 
