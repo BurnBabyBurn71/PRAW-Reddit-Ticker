@@ -1,8 +1,20 @@
-import praw, time, html.parser, requests
+import praw, time, html.parser, requests, sched
 
-#this is designed for python 3.3 and for the /r/BytecoinBCN subreddit, to use, change as needed
-#for python 2.x you will have to change 'import html.parser' to 'import HTMLParser'.
-#You will also have to change 'html.parser.HTMLParser()' to HTMLParser.HTMLParser()'
+"""
+-------------------------------------------------------------------------------------------------------------------------------
+This is designed for python 3.3 and for the /r/BytecoinBCN subreddit, to use for your own subreddit, change where necessary   |
+                                                                                                                              |
+for python 2.x you will have to change the following:                                                                         |
+                                                                                                                              |
+1. 'import html.parser' to 'import HTMLParser'                                                                                |
+2. 'html.parser.HTMLParser()' to 'HTMLParser.HTMLParser()'                                                                    |
+3. print() to print ''                                                                                                        |
+-------------------------------------------------------------------------------------------------------------------------------
+"""
+
+s = sched.scheduler(time.time, time.sleep)
+def do_something(sc):
+    print("Updating the stuff...") #This message will show up each time the script is looped (in other words each time the ticker is updated)
 
 if __name__=="__main__":
 
@@ -32,3 +44,9 @@ if __name__=="__main__":
     if before[1] and after[1]:
         new_desc = before[0] + content + end + after[1]
         sub.update_settings(description=new_desc)
+        
+    sc.enter(600, 1, do_something, (sc,)) #Change 600 to how often you want the script to loop in seconds (600 = 10 minutes)
+s.enter(600, 1, do_something, (s,)) #Change 600 to how often you want the script to loop in seconds (600 = 10 minutes)
+s.run()
+
+#This Python script was made by BurnBabyBurn71
